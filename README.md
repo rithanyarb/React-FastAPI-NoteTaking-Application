@@ -110,7 +110,7 @@ API docs available at: `http://127.0.0.1:8000/docs`
 ## 📸 Screenshots
 
 frontend 
-![image](https://github.com/user-attachments/assets/b4ac8eac-fd54-408f-8af8-3a6d227b1411 | width=100) 
+![image](https://github.com/user-attachments/assets/b4ac8eac-fd54-408f-8af8-3a6d227b1411) 
 ![image](https://github.com/user-attachments/assets/b4bf6b86-df5a-4eed-9bca-6bc2d6a3ce18)
 ![image](https://github.com/user-attachments/assets/28c612e6-d6a3-45a7-b3f9-79a5ab6c411a)
 
