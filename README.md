@@ -1,7 +1,3 @@
-Sure! Here's a professional and well-structured `README.md` for your GitHub project:
-
----
-
 # 📝 Notes App (React + FastAPI)
 
 A simple, full-stack Notes application built using **React** for the frontend and **FastAPI** for the backend. 
