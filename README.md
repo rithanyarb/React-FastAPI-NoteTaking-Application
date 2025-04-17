@@ -1,17 +1,17 @@
 # 📝 Notes App (React + FastAPI)
 
-A simple, full-stack Notes application built using **React** for the frontend and **FastAPI** for the backend. 
+A simple, full-stack Notes application built using **React** for the frontend and **FastAPI** for the backend.
 Users can **register**, **login**, **create**, **edit**, and **delete** personal notes. Authentication is handled using **JWT** tokens.
 
 ---
 
-##  Features
+## Features
 
 - User Registration & Login (JWT Auth)
 - Create, Read, Update, Delete (CRUD) Notes
 - Protected Endpoints with Authentication
 - Responsive UI with Bootstrap styling
-- FastAPI backend with PostgreSQL support 
+- FastAPI backend with PostgreSQL support
 - Token stored in local storage for persistent login
 
 ---
@@ -19,11 +19,13 @@ Users can **register**, **login**, **create**, **edit**, and **delete** personal
 ## Tech Stack
 
 ### Frontend
+
 - [React](https://reactjs.org/)
 - [Bootstrap](https://getbootstrap.com/)
 - Axios for API requests
 
 ### Backend
+
 - [FastAPI](https://fastapi.tiangolo.com/)
 - SQLAlchemy for ORM
 - JWT Authentication
@@ -53,18 +55,20 @@ Users can **register**, **login**, **create**, **edit**, and **delete** personal
 ## 🔑 API Endpoints
 
 ### Authentication
-| Method | Endpoint              | Description            |
-|--------|-----------------------|------------------------|
-| POST   | `/auth/`              | Register new user      |
-| POST   | `/auth/token/`        | Get access token (JWT) |
+
+| Method | Endpoint       | Description            |
+| ------ | -------------- | ---------------------- |
+| POST   | `/auth/`       | Register new user      |
+| POST   | `/auth/token/` | Get access token (JWT) |
 
 ### Notes
-| Method | Endpoint                   | Description              |
-|--------|----------------------------|--------------------------|
-| GET    | `/notes/notes/`            | Get user notes           |
-| POST   | `/notes/notes/`            | Create a new note        |
-| PUT    | `/notes/notes/{note_id}/`  | Update an existing note  |
-| DELETE | `/notes/notes/{note_id}/`  | Delete a note            |
+
+| Method | Endpoint                  | Description             |
+| ------ | ------------------------- | ----------------------- |
+| GET    | `/notes/notes/`           | Get user notes          |
+| POST   | `/notes/notes/`           | Create a new note       |
+| PUT    | `/notes/notes/{note_id}/` | Update an existing note |
+| DELETE | `/notes/notes/{note_id}/` | Delete a note           |
 
 ---
 
@@ -86,7 +90,7 @@ Users can **register**, **login**, **create**, **edit**, and **delete** personal
 cd 📁react_fastapi/📁react/myapp
 npm start                                                             localhost:3000
 
-"backend" 
+"backend"
 cd 📁react_fastapi/NotesApp/python -m venv env
 cd 📁react_fastapi/NotesApp/env/Scripts/activate
 (env) 📁react_fastapi/NotesApp/uvicorn main:app --reload              localhost:8000
@@ -94,16 +98,17 @@ or
 (env) 📁react_fastapi/NotesApp/uvicorn main:app --reload --port 8001/8002/any port.no
 eg. (env) 📁react_fastapi/NotesApp/uvicorn main:app --reload --port 8001
 ```
+
 API docs available at: `http://127.0.0.1:8000/docs`
 
 ---
 
 ## Sample Users
 
-|  Username | Password  |
-|-----------|-----------|
-| `rbrithanya` | `12345`|
-| `vidarshana` | `pass7`|
+| Username     | Password |
+| ------------ | -------- |
+| `rbrithanya` | `12345`  |
+| `vidarshana` | `pass7`  |
 
 ---
 
@@ -123,14 +128,11 @@ Note Taking Page
 
 <img src="https://github.com/user-attachments/assets/28c612e6-d6a3-45a7-b3f9-79a5ab6c411a" width="600" height="600">
 
-
-Backend 
+Backend
 
 localhost:8000/docs or /redocs
 
 <img src="https://github.com/user-attachments/assets/f0a94d90-25f1-4cff-966d-10ceb766e4b5" width="600" height="600">
-
-
 
 ---
 
@@ -142,6 +144,6 @@ Made with ❤️ by [RB Rithanya]
 
 ## License
 
-Free 
+Free
 
 ---
