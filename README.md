@@ -63,9 +63,6 @@ sqlite3 notesapp.db
 Inside SQLite CLI:
 
 ```sql commands
--- View your tables
-.tables
-
 -- Set output display format
 .mode box  -- or use .mode table / .mode list
 
