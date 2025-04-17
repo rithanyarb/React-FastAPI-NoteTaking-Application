@@ -1,22 +1,103 @@
-# 📝 Notes App (React + FastAPI)
+---
+# 📝 Notes App (React + FastAPI + SQLite3)
 
-A simple, full-stack Notes application built using **React** for the frontend and **FastAPI** for the backend.
-Users can **register**, **login**, **create**, **edit**, and **delete** personal notes. Authentication is handled using **JWT** tokens.
+A simple full-stack Notes application built with **React** (frontend) and **FastAPI** (backend) using **JWT authentication** and **SQLite3** as the database.
+---
+
+## 🚀 How to Run This App
+
+Follow the steps below to set up and run the app locally:
 
 ---
 
-## Features
+### 🔧 Frontend Setup
+
+> 💡 Make sure [Node.js](https://nodejs.org/) and `npm` are installed.
+
+```bash
+# Navigate to your frontend directory
+cd react_fastapi/react/myapp
+
+# Install dependencies
+npm install
+
+# Start the React development server
+npm start
+```
+
+🔗 Runs on: [http://localhost:3000](http://localhost:3000)
+
+---
+
+### ⚙️ Backend Setup
+
+```bash
+# Navigate to your backend directory
+cd react_fastapi/NotesApp
+
+# Create and activate a virtual environment
+python -m venv env
+env\Scripts\activate  # For Windows
+# OR source env/bin/activate  # For macOS/Linux
+
+# Run the FastAPI backend server
+uvicorn main:app --reload
+# OR use a custom port
+uvicorn main:app --reload --port 8001
+```
+
+📘 API Docs: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+
+---
+
+### 🗃️ SQLite3 Database Access
+
+After users and notes are created via the frontend or Swagger docs:
+
+```bash
+# Launch SQLite CLI in your project directory
+cd react_fastapi/NotesApp
+sqlite3 notesapp.db
+```
+
+Inside SQLite CLI:
+
+```sql commands
+-- View your tables
+.tables
+
+-- Set output display format
+.mode box  -- or use .mode table / .mode list
+
+-- View all users
+SELECT * FROM users;
+
+-- View all notes
+SELECT * FROM notes;
+```
+
+📝 Sample schema if creating tables manually:
+
+```sql
+CREATE TABLE users (user_id INTEGER PRIMARY KEY AUTOINCREMENT, user_name TEXT UNIQUE, email TEXT, hashed_password TEXT, created_at DATETIME DEFAULT CURRENT_TIMESTAMP, is_active BOOLEAN);
+
+CREATE TABLE notes (note_id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, title TEXT, content TEXT, created_at DATETIME DEFAULT CURRENT_TIMESTAMP, updated_at DATETIME, FOREIGN KEY(user_id) REFERENCES users(user_id));
+```
+
+---
+
+## 🔐 Features
 
 - User Registration & Login (JWT Auth)
 - Create, Read, Update, Delete (CRUD) Notes
 - Protected Endpoints with Authentication
 - Responsive UI with Bootstrap styling
-- FastAPI backend with PostgreSQL support
+- FastAPI backend with SQLite or PostgreSQL support
 - Token stored in local storage for persistent login
 
 ---
 
-## Tech Stack
+## 🧰 Tech Stack
 
 ### Frontend
 
@@ -33,7 +114,7 @@ Users can **register**, **login**, **create**, **edit**, and **delete** personal
 
 ---
 
-## Project Structure
+## 🗂️ Project Structure
 
 ```
 📁 frontend/
@@ -72,38 +153,7 @@ Users can **register**, **login**, **create**, **edit**, and **delete** personal
 
 ---
 
-## 🔧 Setup Instructions
-
-### Prerequisites
-
-- Node.js
-- Python 3.9+
-- pip / pipenv
-- PostgreSQL (server - database storage)
-
----
-
-### Frontend and Backend Setup
-
-```terminal
-"frontend"
-cd 📁react_fastapi/📁react/myapp
-npm start                                                             localhost:3000
-
-"backend"
-cd 📁react_fastapi/NotesApp/python -m venv env
-cd 📁react_fastapi/NotesApp/env/Scripts/activate
-(env) 📁react_fastapi/NotesApp/uvicorn main:app --reload              localhost:8000
-or
-(env) 📁react_fastapi/NotesApp/uvicorn main:app --reload --port 8001/8002/any port.no
-eg. (env) 📁react_fastapi/NotesApp/uvicorn main:app --reload --port 8001
-```
-
-API docs available at: `http://127.0.0.1:8000/docs`
-
----
-
-## Sample Users
+## 👤 Sample Users
 
 | Username     | Password |
 | ------------ | -------- |
@@ -114,23 +164,19 @@ API docs available at: `http://127.0.0.1:8000/docs`
 
 ## 📸 Screenshots
 
-Frontend Website
-
-Login Page
+**Login Page**
 
 <img src="https://github.com/user-attachments/assets/b4ac8eac-fd54-408f-8af8-3a6d227b1411" width="600" height="600">
 
-Register Page
+**Register Page**
 
 <img src="https://github.com/user-attachments/assets/b4bf6b86-df5a-4eed-9bca-6bc2d6a3ce18" width="600" height="600">
 
-Note Taking Page
+**Note Taking Page**
 
 <img src="https://github.com/user-attachments/assets/28c612e6-d6a3-45a7-b3f9-79a5ab6c411a" width="600" height="600">
 
-Backend
-
-localhost:8000/docs or /redocs
+**Backend Swagger UI**
 
 <img src="https://github.com/user-attachments/assets/f0a94d90-25f1-4cff-966d-10ceb766e4b5" width="600" height="600">
 
@@ -138,12 +184,12 @@ localhost:8000/docs or /redocs
 
 ## ✍️ Author
 
-Made with ❤️ by [RB Rithanya]
+Made with ❤️ by **RB Rithanya**
 
 ---
 
-## License
+## 📜 License
 
-Free
+Free to use for personal and educational purposes.
 
 ---
